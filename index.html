@@ -8,12 +8,22 @@
 </head>
 <body>
     <script>
-        function getComputerChoice() {
-            const choices= ['rock', 'paper', 'scissors'];
+        let humanScore = 0;
+        let computerScore = 0;
+
+        function getComputerChoice() {                                          
+            const choices = ['rock', 'paper', 'scissors'];
             let randomChoice = Math.floor(Math.random() * choices.length);
             console.log(choices[randomChoice]);
         }
         getComputerChoice();
+
+        function getHumanChoice() {
+            let humanChoice = prompt("Type your choice (rock, paper, or scissors):")
+            console.log("You chose:" + humanChoice.toLowerCase());
+        }
+        getHumanChoice();
+
     </script>
 </body>
 </html>
