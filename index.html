@@ -14,15 +14,32 @@
         function getComputerChoice() {                                          
             const choices = ['rock', 'paper', 'scissors'];
             let randomChoice = Math.floor(Math.random() * choices.length);
-            console.log(choices[randomChoice]);
+            return (choices[randomChoice]);
         }
-        getComputerChoice();
 
         function getHumanChoice() {
             let humanChoice = prompt("Type your choice (rock, paper, or scissors):")
-            console.log("You chose:" + humanChoice.toLowerCase());
+            return(humanChoice.toLowerCase());
         }
-        getHumanChoice();
+
+        function playRound(humanChoice, computerChoice) {
+            if (humanChoice === computerChoice){
+                message = 'Tie';
+            } else if ((humanChoice == 'rock' && computerChoice == 'scissors') ||
+                        (humanChoice == 'scissors' && computerChoice == 'paper') ||
+                        (humanChoice == 'paper' && computerChoice == 'rock')) {
+                message = 'Human wins!';
+                ++humanScore;
+            }
+               else {
+                    message = 'Computer wins!';
+                    ++computerScore;
+                }   
+        }
+            const humanSelection = getHumanChoice();
+            const computerSelection = getComputerChoice();
+
+        playRound(humanSelection, computerSelection);
 
     </script>
 </body>
